@@ -1,0 +1,21 @@
+{
+    "producer": "hummingbird",
+    "nodes": [
+        {
+            "url": "52.199.160.95:8888",
+            "name": "master",
+            "restart_script": "PATH"
+        }
+    ],
+    "timeout": 360000,
+    "produce_timeout": 600000,
+    "mail": {
+        "host": "smtp.163.com",
+        "port": 465,
+        "secure": true,
+        "auth": {
+            "user": "motorfriends",
+            "pass": "PASS"
+        }
+    }
+}

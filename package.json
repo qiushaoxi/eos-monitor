@@ -1,0 +1,25 @@
+{
+  "name": "eos-monitor",
+  "version": "1.0.0",
+  "description": "eos block producer monitor",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiushaoxi/eos-monitor.git"
+  },
+  "author": "joshua",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qiushaoxi/eos-monitor/issues"
+  },
+  "homepage": "https://github.com/qiushaoxi/eos-monitor#readme",
+  "dependencies": {
+    "moment": "^2.22.1",
+    "nodemailer": "^4.6.4",
+    "shelljs": "^0.8.1",
+    "superagent": "^3.8.2"
+  }
+}
