@@ -2,7 +2,7 @@
     "producer": "hummingbird",
     "nodes": [
         {
-            "url": "52.199.160.95:8888",
+            "url": "127.0.0.1:8888",
             "name": "master",
             "restart_script": "PATH"
         }

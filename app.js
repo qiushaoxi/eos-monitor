@@ -8,6 +8,8 @@ const restart_script = config.restart_script;
 var producer = config.producer;
 var my_last_block_timestmp = Date.now();
 
+var restart_flag = false;
+
 function is_time_out(time, timeout) {
     let gap = Date.now() - time;
     if (gap > timeout) {
@@ -34,9 +36,18 @@ function safelyParseJSON(json) {
 }
 
 function restart(node) {
-    console.error("restarting", moment.unix(Date.now()));
-    mail.sendMail(node.name, node.url);
-    shell.exec(node.restart_script);
+    //do not restart when restarting
+    if (restart_flag) {
+        return;
+    } else {
+        console.error("restarting", moment(Date.now()));
+        mail.sendMail(node.name, node.url);
+        shell.exec(node.restart_script);
+        restart_flag = true;
+        setTimeout(() => {
+            restart_flag = false;
+        }, 60000);
+    }
 }
 
 function check_node(node) {
@@ -88,6 +99,7 @@ function check_node(node) {
         });
 }
 
+console.log("start moniting!");
 setInterval(() => {
     for (let i = 0; i < config.nodes.length; i++) {
         check_node(config.nodes[i]);
