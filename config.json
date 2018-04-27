@@ -9,6 +9,8 @@
     ],
     "timeout": 360000,
     "produce_timeout": 600000,
+    "restart_time": 3600000,
+    "mail_time": 60000,
     "mail": {
         "host": "smtp.163.com",
         "port": 465,
